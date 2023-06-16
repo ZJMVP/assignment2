@@ -11,7 +11,7 @@
             text-align: left;
         }
 
-                .table-con {
+        .table-con {
             width: 100%;
         }
 
@@ -40,18 +40,14 @@
         }
     </style>
 </head>
+l
 <body style="background-color:#FFFFE0;">
 <br>
 
 <div>
     <a href="/">Home</a><br><br>
-    <form action="/Task3" method="POST">
-        Time: <input type="text" placeholder="time" name="Time" value="{{ Time }}"> <br/><br/>
-        Latitude:<input type="text" placeholder="latitude" name="Latitude" value="{{ Latitude }}"><br/><br/>
-        Longitude: <input type="text" placeholder="longitude" name="Longitude" value="{{ Longitude }}"><br/><br/>
-        Mag: <input type="text" placeholder="mag" name="Mag" value="{{ Mag }}"><br/><br/>
-        Net: <input type="text" placeholder="net" name="Net" value="{{ Net }}"><br/><br/>
-        Place: <input type="text" placeholder="place" name="Place" value="{{ Place }}"><br/><br/>
+    <form action="/show_a_earthquake" method="POST">
+        Time: <input type="text" placeholder="enter a time" name="time" value="{{ time }}"> <br/><br/>
         <input type="submit" value="Submit">
     </form>
 </div>
