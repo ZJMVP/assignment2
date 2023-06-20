@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .navigation-bar {
+            width: 100%;
+            height: 40px;
+            background-color: #436283;
+        }
+
+        .navigation-bar a {
+            display: block;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            height: 40px;
+            width: 2.5rem;
+            line-height: 40px;
+            margin-left: 20px;
+        }
+        .form-con{
+            margin-top: 20px;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table-con {
+            width: 100%;
+        }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #436283;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="navigation-bar">
+    <a href="/">Home</a>
+</div>
+<div class="form-con">
+    <form action="/mag" method="POST">
+        Enter the magnitude:
+        <input type="text" name="mag"/><br/>
+        <input type="submit" value="submit"/>
+    </form>
+</div>
+{% if temp == 0 %}
+    <p>Total Records: {{ cnt }}</p>
+
+    <div class="container">
+        <div class="table-con">
+            <table id='customers'>
+                <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                    <th scope="col">Depth</th>
+                    <th scope="col">Mag</th>
+                    <th scope="col">MagType</th>
+                    <th scope="col">Nst</th>
+                    <th scope="col">Gap</th>
+                    <th scope="col">DMin</th>
+                    <th scope="col">Rms</th>
+                    <th scope="col">Net</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Updated</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">HorizontalError</th>
+                    <th scope="col">DepthError</th>
+                    <th scope="col">Mag_Error</th>
+                    <th scope="col">MagNst</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">LocationSource</th>
+                    <th scope="col">MagSource</th>
+                </tr>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                        <td>{{ row[6] }}</td>
+                        <td>{{ row[7] }}</td>
+                        <td>{{ row[8] }}</td>
+                        <td>{{ row[9] }}</td>
+                        <td>{{ row[10] }}</td>
+                        <td>{{ row[11] }}</td>
+                        <td>{{ row[12] }}</td>
+                        <td>{{ row[13] }}</td>
+                        <td>{{ row[14] }}</td>
+                        <td>{{ row[15] }}</td>
+                        <td>{{ row[16] }}</td>
+                        <td>{{ row[17] }}</td>
+                        <td>{{ row[18] }}</td>
+                        <td>{{ row[19] }}</td>
+                        <td>{{ row[20] }}</td>
+                        <td>{{ row[21] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endif %}
+</body>
+</html>

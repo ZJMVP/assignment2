@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .navigation-bar {
+            width: 100%;
+            height: 40px;
+            background-color: #436283;
+        }
+
+        .navigation-bar a {
+            display: block;
+            font-size: 20px;
+            color: white;
+            text-decoration: none;
+            height: 40px;
+            width: 2.5rem;
+            line-height: 40px;
+            margin-left: 20px;
+        }
+
+        .form-con {
+            margin-top: 20px;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table-con {
+            width: 100%;
+        }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #436283;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navigation-bar">
+    <a href="/">Home</a>
+</div>
+<div class="form-con">
+    <form action="/searchRange" method="POST">
+        Lower bound: <input type="text" placeholder="lower bound" name="Range1" value="{{ Range1 }}"> <br/>
+        Upper bound:<input type="text" placeholder="upper bound" name="Range2" value="{{ Range2 }}"><br/>
+        From Date:<input type="date" name="Fromdate" value="{{ Fromdate }}"><br/>
+        to Date:<input type="date" name="Todate" value="{{ Todate }}"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div class="container">
+    <div class="table-con">
+        {% if length %}
+            <table id='customers'>
+            <tr>
+                <td>Time</td>
+                <td>Latitude</td>
+                <td>Longitude</td>
+                <td>Depth</td>
+                <td>Magnitude</td>
+                <td>MagnitudeType</td>
+                <td>Nst</td>
+                <td>Gap</td>
+                <td>Dmin</td>
+                <td>Rms</td>
+                <td>Net</td>
+                <td>Id</td>
+                <td>Updated</td>
+                <td>Place</td>
+                <td>Type</td>
+                <td>HorizontalError</td>
+                <td>DepthError</td>
+                <td>MagError</td>
+                <td>MagNst</td>
+                <td>Status</td>
+                <td>LocSource</td>
+                <td>MagSource</td>
+            </tr>
+
+            {% for col in rows %}
+                <tr>
+                    <td>{{ col[0] }}</td>
+                    <td>{{ col[1] }}</td>
+                    <td>{{ col[2] }}</td>
+                    <td>{{ col[3] }}</td>
+                    <td>{{ col[4] }}</td>
+                    <td>{{ col[5] }}</td>
+                    <td>{{ col[6] }}</td>
+                    <td>{{ col[7] }}</td>
+                    <td>{{ col[8] }}</td>
+                    <td>{{ col[9] }}</td>
+                    <td>{{ col[10] }}</td>
+                    <td>{{ col[11] }}</td>
+                    <td>{{ col[12] }}</td>
+                    <td>{{ col[13] }}</td>
+                    <td>{{ col[14] }}</td>
+                    <td>{{ col[15] }}</td>
+                    <td>{{ col[16] }}</td>
+                    <td>{{ col[17] }}</td>
+                    <td>{{ col[18] }}</td>
+                    <td>{{ col[19] }}</td>
+                    <td>{{ col[20] }}</td>
+                    <td>{{ col[21] }}</td>
+
+                </tr>
+
+            {% endfor %}
+        {% endif %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -3,23 +3,82 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        h1 {
-            text-align: left;
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
         }
 
-        div {
-            text-align: left;
+        .main {
+            width: 900px;
+            height: 560px;
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .left {
+            width: 500px;
+            height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-content {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .right {
+            width: 400px;
+            height: 560px;
+            background: rgba(255, 255, 255, 9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-content {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
         }
     </style>
 </head>
-<body style="background-color:#FFFFE0;">
-<br>
-<h1>JIE ZHAO</h1>
-<h1>1154</h1><br><br>
-<div>
-    <a href="/Task1">Enter a time</a><br><br>
-    <a href="/Task2">Enter a mag range and a known net value</a><br><br>
-    <a href="/Task3">Add an earthquake</a><br><br>
+<body>
+
+<div class="wrap">
+    <div class="main">
+        <div class="left">
+            <div class="left-content">
+                <div>
+                    <h1>JIE ZHAO 1002101154</h1>
+                </div>
+                <div>
+                    <h2>Welcome to my second Assignment</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="right-content">
+                <a href="/mag">Search earthquakes that magnitude greater than the given input</a><br><br>
+                <a href="/searchRange">Search earthquakes in the given range</a><br><br>
+                <a href="/speLocation">Specified location and distance</a><br><br>
+                <a href="/cluster">Clusters</a><br><br>
+                <a href="/comparison">Comparison between the number of earthquakes during day and night</a><br><br>
+            </div>
+
+        </div>
+    </div>
 </div>
 </body>
 </html>
